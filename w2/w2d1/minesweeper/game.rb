@@ -14,6 +14,7 @@ class Game
 
   def initialize(size = 9, bombs = 10)
     @board = Board.new(self, size, bombs)
+    @pos = [0, 0]
   end
 
   def run
@@ -65,9 +66,7 @@ class Game
   # end
 
   def cursor_loop
-    pos = [0, 0]
     loop do
-      #update render
       board.render(pos)
       puts "Please move the cursor and press r, f, or s, or q to reveal,"
       puts "(de)flag, save, or quit."
@@ -84,19 +83,19 @@ class Game
       elsif command == :"\"q\""
         exit 0
       elsif command == :up && board.on_board?([pos[0] - 1, pos[1]])
-        pos[0] -= 1
+        self.pos[0] -= 1
       elsif command == :down && board.on_board?([pos[0] + 1, pos[1]])
-        pos[0] += 1
+        self.pos[0] += 1
       elsif command == :left && board.on_board?([pos[0], pos[1] - 1])
-        pos[1] -= 1
+        self.pos[1] -= 1
       elsif command == :right && board.on_board?([pos[0], pos[1] + 1])
-        pos[1] += 1
+        self.pos[1] += 1
       end
     end
   end
 
   def finish_game
-    print board.won? ? "You win!" : "You blew up!"
+    puts board.won? ? "You win!" : "You blew up!"
   end
 
   def log_time(secs)
@@ -117,4 +116,10 @@ class Game
     File.open("leaderboard.txt", "w") { |f| f.write(new_leaderboard) }
     puts new_leaderboard
   end
+
+  protected
+
+  attr_accessor :pos
 end
+
+Game.new.run

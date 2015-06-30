@@ -1,3 +1,5 @@
+require 'io/console'
+
 def read_char
   STDIN.echo = false
   STDIN.raw!
