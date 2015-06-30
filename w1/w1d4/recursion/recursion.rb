@@ -63,3 +63,19 @@ def bsearch(array, target)
     bsearch(array[0...midpoint_idx], target)
   end
 end
+
+
+# def bsearch(array, target)
+#   midpoint_idx = array.length / 2
+#   midpoint = array[midpoint_idx]
+#
+#   return nil if array.length == 0
+#   return midpoint_idx if midpoint == target
+#   if target > midpoint
+#     recursive_output = bsearch(array[(midpoint_idx + 1)..-1], target)
+#     return nil if recursive_output.nil?
+#     midpoint_idx + 1 + recursive_output
+#   else
+#     bsearch(array[0...midpoint_idx], target)
+#   end
+# end
