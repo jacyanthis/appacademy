@@ -65,8 +65,8 @@ class Question < ActiveRecord::Base
   #   results
   # end
 
-  def results
-    answer_choices.select("answer_choices.*, COUNT(responses.id) AS response_count")
-      .
-  end
+  # def results
+  #   answer_choices.select("answer_choices.*, COUNT(responses.id) AS response_count")
+  #     .
+  # end
 end

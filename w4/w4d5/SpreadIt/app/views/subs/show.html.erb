@@ -1,0 +1,14 @@
+<h1><%=@sub.title%></h1>
+
+<ul>
+  <%= render @sub.posts %>
+</ul>
+
+
+<%= link_to "New Post", new_post_url %>
+<br>
+<% if @sub.moderator_id == current_user.id %>
+  <%= link_to "Edit Sub", edit_sub_url %>
+<% end %>
+<br>
+<%= link_to "Sub Homepage", subs_url %>

@@ -1,0 +1,12 @@
+<li><%= link_to "View this comment", comment_url(comment) %>
+<br>
+<%= comment.content %>
+<%= button_to "Upvote", comment_upvote_url(comment) %>
+<%= button_to "Downvote", comment_downvote_url(comment) %>
+<br>
+
+By: <%= comment.author.username %>
+<ul>
+  <%= render @all_comments[comment.id] %>
+</ul>
+</li>

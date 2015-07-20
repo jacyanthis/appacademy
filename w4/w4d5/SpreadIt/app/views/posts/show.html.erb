@@ -1,0 +1,26 @@
+<h1> <%=@post.title %> </h1>
+
+<br>
+By <%=@post.author.username%>
+<br>
+<br>
+Content: <%=@post.content%>
+<br><br>
+
+Comments:
+<ul>
+  <%= render @all_comments[nil] %>
+</ul>
+<br>
+  <%= link_to "New Comment", new_post_comment_url(@post) %>
+<br>
+<br>
+<% if @post.author_id == current_user.id %>
+  <%= link_to "Edit this post", edit_post_url(@post) %>
+<% end %>
+<br>
+<br>
+Subspreadits for this post:
+<ul>
+  <%= render @post.subs %>
+</ul>

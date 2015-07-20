@@ -1,0 +1,24 @@
+By <%=@comment.author.username%>
+<br>
+<br>
+Content: <%=@comment.content%>
+<br><br>
+
+Post a new comment:
+<form action="<%=comments_url%>" method="POST">
+  <%= auth_token %>
+<br>
+  <input type="hidden" name="comment[post_id]" value="<%=@comment.post_id%>">
+  <input type="hidden" name="comment[parent_comment_id]" value="<%=@comment.id%>">
+  <label for="content">Content</label>
+  <textarea name="comment[content]" id="content"></textarea>
+  <br><br>
+
+  <input type="submit" value="Post Comment">
+</form>
+
+<ul>
+  <%= render @all_comments[@comment.id] %>
+</ul>
+
+<%= button_to "Go back to Post", post_url(@comment.post), method: :get%>

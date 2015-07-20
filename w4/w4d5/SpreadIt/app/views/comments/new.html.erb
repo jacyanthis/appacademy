@@ -1,0 +1,10 @@
+<form action="<%=comments_url%>" method="POST">
+  <%= auth_token %>
+<br>
+  <input type="hidden" name="comment[post_id]" value="<%=params[:post_id]%>">
+  <label for="content">Content</label>
+  <textarea name="comment[content]" id="content"><%=@comment.content%></textarea>
+  <br><br>
+
+  <input type="submit" value="Post Comment">
+</form>

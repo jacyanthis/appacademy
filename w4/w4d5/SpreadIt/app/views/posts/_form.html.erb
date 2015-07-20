@@ -1,0 +1,36 @@
+<% action = post.persisted? ? post_url(post) : posts_url %>
+<% method = post.persisted? ? "PATCH" : "POST" %>
+<% submit_text = post.persisted? ? "Edit #{post.title}" : "Create a new post." %>
+
+<form action="<%= action %>" method="POST">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <%= auth_token %>
+
+  <label for="title">Title</label>
+  <input type="text" name="post[title]" id="title" value="<%= post.title %>">
+
+  <br><br>
+
+  <label for="content">Content</label>
+  <textarea name="post[content]" id="content"><%=post.content%></textarea>
+
+  <br><br>
+
+  <label for="url">URL</label>
+  <input type="text" name="post[url]" id="url" value="<%= post.url %>">
+
+  <br><br>
+
+  Which subspreadits should this post be shown in?
+  <br>
+  <br>
+  <input type="hidden" name="post[sub_ids][]" value="">
+  <% subs.each do |sub| %>
+    <label for="<%= sub.title %>"><%= sub.title %></label>
+    <input type="checkbox" name="post[sub_ids][]" value="<%= sub.id %>"
+      <%= "checked" if post.subs.include?(sub) %> id="<%= sub.title %>">
+    <br>
+  <% end %>
+
+  <input type="submit" value="<%= submit_text %>">
+</form>
