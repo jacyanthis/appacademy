@@ -1,0 +1,14 @@
+<h1>Edit your profile</h1>
+
+<form action="<%= user_url(@user) %>" method="post">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="username">Username</label>
+  <input type="text" name="user[username]" id="username" value="<%= @user.username %>">
+
+  <label for="password">Password</label>
+  <input type="password" name="user[password]" id="password">
+
+  <input type="submit" value="Sign up">
+</form>

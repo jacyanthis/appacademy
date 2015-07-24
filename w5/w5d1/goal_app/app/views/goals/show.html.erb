@@ -1,0 +1,23 @@
+<h1><%= @goal.description %></h1>
+
+<h2>Comments:</h2>
+<% if @goal.comments %>
+  <ul>
+    <%= render @goal.comments %>
+  </ul>
+<% end %>
+
+<h2>New Comment</h2>
+<form action="/goal_comments" method="post">
+  <%= auth_token %>
+  <input
+    type="hidden"
+    name="goal_comment[goal_id]"
+    value="<%= @goal.id %>">
+  <label>
+    Body
+    <textarea name="goal_comment[body]"></textarea>
+  </label>
+
+  <input type="submit" value="Make Comment">
+</form>

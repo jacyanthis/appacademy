@@ -1,0 +1,21 @@
+<h1>New Goal</h1>
+
+<form action="<%= goals_url %>" method="post">
+  <%= auth_token %>
+  <label>
+    Description
+    <input type="text" name="goal[description]" value="<%= @goal.description %>">
+  </label>
+
+  <label>
+    Completed
+    <input type="checkbox" name="goal[is_completed]" value="<%= @goal.is_completed %>">
+  </label>
+
+  <label>
+    Private
+    <input type="checkbox" name="goal[is_private]" value="<%= @goal.is_private %>">
+  </label>
+
+  <input type="submit" value="Create Goal">
+</form>

@@ -1,0 +1,31 @@
+<h1><%= @user.username %>'s Profile</h1>
+
+<h2>Goals:</h2>
+<% if @user == current_user %>
+  <%= render @user.goals %>
+<% else %>
+  <%= render @user.public_goals %>
+<% end %>
+
+<h2>Comments:</h2>
+<% if @user.received_user_comments %>
+  <ul>
+    <%= render @user.received_user_comments %>
+  </ul>
+<% end %>
+
+<h2>New Comment</h2>
+<form action="/user_comments" method="post">
+  <%= auth_token %>
+  <input
+    type="hidden"
+    name="user_comment[user_id]"
+    value="<%= @user.id %>">
+
+  <label>
+    Body
+    <textarea name="user_comment[body]"></textarea>
+  </label>
+
+  <input type="submit" value="Make Comment">
+</form>
