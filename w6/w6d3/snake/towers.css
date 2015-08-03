@@ -1,0 +1,58 @@
+.towers {
+  position: relative;
+  margin: 0px auto;
+  width: 390px;
+  bottom: -100px;
+  padding: 0px;
+}
+
+.stack {
+  bottom: 0px;
+  border-bottom: solid black 10px;
+  width: 100px;
+  float: left;
+  margin: 0px 10px;
+  min-height: 150px;
+}
+
+.disc {
+  height: 50px;
+  margin: 0px auto;
+  border: solid black 1px;
+}
+
+.disc.hidden {
+  border: solid white 1px;
+}
+
+.disc.s1 {
+  width: 50px;
+  background-color: blue;
+}
+
+.disc.s2 {
+  width: 75px;
+  background-color: yellow;
+}
+
+.disc.s3 {
+  width: 98px;
+  background-color: green;
+}
+
+h1 {
+  text-align: center;
+  font-size: 46px;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  font-size: 48px;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
