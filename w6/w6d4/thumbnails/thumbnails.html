@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thumbnails</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./thumbnails.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+    <link href="./thumbnails.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="thumbnails">
+      <div class="active">
+      </div>
+      <div class="gutter">
+        <a href="javascript:void(0)" class="nav left">&lt;</a>
+        <div class="gutter-images group">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/001.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/002.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/003.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/004.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/005.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/006.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/007.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/008.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/009.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/012.png">
+          <img src="http://appacademy.github.io/jQueryPlugins/images/025.png">
+        </div>
+        <a href="javascript:void(0)" class="nav right">&gt;</a>
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        $('.thumbnails').thumbnails();
+      })
+    </script>
+  </body>
+</html>
