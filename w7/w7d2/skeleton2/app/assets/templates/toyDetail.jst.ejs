@@ -1,0 +1,27 @@
+<div class="detail">
+  <img src="<%= toy.escape('image_url') %>">
+  <br>
+
+  Name: <%= toy.escape('name') %>
+  <br>
+
+  Happiness: <%= toy.escape('happiness') %>
+  <br>
+
+  Price: <%= toy.escape('price') %>
+</div>
+
+<select
+  id='owner-reassignment'
+  data-pokemon-id="<%= toy.get('pokemon_id') %>"
+  data-toy-id="<%= toy.get('id') %>">
+  <% pokeList.forEach(function (pokemon) { %>
+    <option value='<%= pokemon.get("id") %>'
+      <% if (toy.get("pokemon_id") === pokemon.get("id")) { %>
+        <%= "selected" %>
+      <% } %>>
+
+      <%= pokemon.escape('name') %>
+    </option>
+  <% }); %>
+</select>

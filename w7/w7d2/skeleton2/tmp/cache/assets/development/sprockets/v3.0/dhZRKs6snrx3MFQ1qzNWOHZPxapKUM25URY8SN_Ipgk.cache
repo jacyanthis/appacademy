@@ -1,0 +1,3 @@
+I"Ãfunction(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div class="detail">\n  <img src="',  toy.escape('image_url') ,'">\n  <br>\n\n  Name: ',  toy.escape('name') ,'\n  <br>\n\n  Happiness: ',  toy.escape('happiness') ,'\n  <br>\n\n  Price: ',  toy.escape('price') ,'\n</div>\n\n<select\n  id=\'owner-reassignment\'>\n  ');  pokeList.each(function (pokemon) { ; __p.push('\n    <option data-pokemon-id=\'',  pokemon.get("id") ,'\'\n      ');  if (toy.get("pokemon_id") === pokemon.get("id")) { %
+        ',  "selected" ,'
+      <% } ; __p.push('>\n\n      ',  pokemon.escape('name') ,'\n    </option>\n  ');  }); ; __p.push('\n</select>\n');}return __p.join('');}:ET
